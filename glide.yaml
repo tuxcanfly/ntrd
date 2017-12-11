@@ -1,0 +1,6 @@
+package: github.com/tuxcanfly/ntrd
+import:
+- package: github.com/lightninglabs/neutrino
+- package: github.com/roasbeef/btcd
+  subpackages:
+  - chaincfg

@@ -1,0 +1,70 @@
+hash: db8d57641e48228bbbdad5e5a414958680e9114637fb6a9a4265b7fdf8b1d3bf
+updated: 2017-12-11T21:54:00.33456045+05:30
+imports:
+- name: github.com/aead/siphash
+  version: e404fcfc888570cadd1610538e2dbc89f66af814
+- name: github.com/btcsuite/btclog
+  version: 84c8d2346e9fc8c7b947e243b9c24e6df9fd206a
+- name: github.com/btcsuite/go-socks
+  version: 4720035b7bfd2a9bb130b1c184f8bbe41b6f0d0f
+  subpackages:
+  - socks
+- name: github.com/btcsuite/golangcrypto
+  version: 53f62d9b43e87a6c56975cf862af7edf33a8d0df
+  subpackages:
+  - ripemd160
+  - nacl/secretbox
+  - scrypt
+  - poly1305
+  - salsa20/salsa
+  - pbkdf2
+- name: github.com/btcsuite/websocket
+  version: 31079b6807923eb23992c421b114992b95131b55
+- name: github.com/davecgh/go-spew
+  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
+  subpackages:
+  - spew
+- name: github.com/kkdai/bstream
+  version: f391b8402d23024e7c0f624b31267a89998fca95
+- name: github.com/lightninglabs/neutrino
+  version: 38a7ecb19a34e42540da248f89857150daad3c21
+  subpackages:
+  - filterdb
+  - headerfs
+- name: github.com/roasbeef/btcd
+  version: 300370be8e0a44dedc4eea6319c56c1df7014325
+  subpackages:
+  - chaincfg
+  - addrmgr
+  - blockchain
+  - btcjson
+  - chaincfg/chainhash
+  - connmgr
+  - peer
+  - rpcclient
+  - txscript
+  - wire
+  - btcec
+  - database
+- name: github.com/roasbeef/btcutil
+  version: c3ff179366044979fb9856c2feb79bd4c2184c7a
+  subpackages:
+  - base58
+  - gcs
+  - gcs/builder
+  - hdkeychain
+  - bech32
+- name: github.com/roasbeef/btcwallet
+  version: 3037a033935cca719ba3c472870e7d080443a82f
+  subpackages:
+  - waddrmgr
+  - wallet/txauthor
+  - walletdb
+  - walletdb/bdb
+  - internal/zero
+  - snacl
+- name: golang.org/x/crypto
+  version: 94eea52f7b742c7cbe0b03b22f0c4c8631ece122
+  subpackages:
+  - ripemd160
+testImports: []
