@@ -8,6 +8,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/btcsuite/btclog"
 	"github.com/lightninglabs/neutrino"
 	"github.com/roasbeef/btcd/chaincfg"
 	"github.com/roasbeef/btcwallet/walletdb"
@@ -15,19 +16,24 @@ import (
 )
 
 func main() {
+	logger := btclog.NewBackend(os.Stdout).Logger("NTRD")
+	logger.SetLevel(btclog.LevelDebug)
+	neutrino.UseLogger(logger)
 	db, err := walletdb.Create("bdb", "/tmp/neutrino/wallet.db")
 	if err != nil {
 		log.Fatalf("unable to create db: %v", err)
+		return
 	}
 	svc, err := neutrino.NewChainService(neutrino.Config{
 		DataDir:      "/tmp/neutrino",
 		Database:     db,
 		Namespace:    []byte("neutrino"),
-		ChainParams:  chaincfg.SimNetParams,
-		ConnectPeers: []string{"127.0.0.1:12555"},
+		ChainParams:  chaincfg.TestNet3Params,
+		ConnectPeers: []string{"btcd0.lightning.computer:18333"},
 	})
 	if err != nil {
-		log.Fatalf("unable to create neutrino: %v", err)
+		logger.Errorf("unable to create neutrino: %v", err)
+		return
 	}
 	svc.Start()
 
